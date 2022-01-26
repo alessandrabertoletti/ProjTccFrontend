@@ -1,0 +1,33 @@
+<div class="mat-elevation-z4">
+    <table mat-table [dataSource]="vacinacaos" matSort>
+        <ng-container matColumnDef="lotedose">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Lote da Dose</th>
+            <td mat-cell *matCellDef="let linha">{{linha.lotedose}}</td>
+        </ng-container>
+        <ng-container matColumnDef="datavacinacao">
+            <th mat-header-cell *matHeaderCellDef>Data da Vacinação</th>
+            <td mat-cell *matCellDef="let linha">{{ linha.datavacinacao}}</td>
+        </ng-container>
+        <ng-container matColumnDef="proximadose">
+            <th mat-header-cell *matHeaderCellDef>Proxima Dose</th>
+            <td mat-cell *matCellDef="let linha">{{ linha.proximadose}}</td>
+        </ng-container>
+        <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let linha">
+                <a (click)="editar(linha)" class="edit">
+                    <i class="material-icons">
+                    edit
+                    </i>
+                    </a>
+                    <a (click)="excluir(linha)" class="delete">
+                    <i class="material-icons">
+                    delete
+                    </i>
+                    </a>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+        <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+    </table>
+</div>

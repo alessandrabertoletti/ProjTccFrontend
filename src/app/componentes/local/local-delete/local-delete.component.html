@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title>Confirma exclusão do registro?</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Cidade" [(ngModel)]="local.cidade" name="cidade" disabled>
+
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="rua" [(ngModel)]="local.rua" name="rua" disabled>
+
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="delete()" color="warn">
+        Excluir
+    </button>
+    <button mat-raised-button (click)="cancelar()">
+        Cancelar
+    </button>
+</mat-card>

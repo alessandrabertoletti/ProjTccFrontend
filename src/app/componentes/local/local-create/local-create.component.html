@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>Novo Local</mat-card-title>
+    <form #form="ngForm">
+        <mat-form-field>
+            <input matInput placeholder="Cidade" [(ngModel)]="local.cidade" name="cidade" required cidade>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Estado" [(ngModel)]="local.estado" name="estado" required estado>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Rua" [(ngModel)]="local.rua" name="rua" required rua>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Bairro" [(ngModel)]="local.bairro" name="bairro" required bairro>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Complemento" [(ngModel)]="local.complemento" name="complemento" required complemento>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="criarLocal()" color="primary" [disabled]="!form.valid">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancelar()">
+        Cancelar
+    </button>
+</mat-card>

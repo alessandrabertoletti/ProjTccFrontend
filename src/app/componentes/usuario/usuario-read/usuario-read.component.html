@@ -1,0 +1,33 @@
+<div class="mat-elevation-z4">
+    <table mat-table [dataSource]="usuarios" matSort>
+        <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+            <td mat-cell *matCellDef="let linha">{{linha.nome}}</td>
+        </ng-container>
+        <ng-container matColumnDef="dataNascimento">
+            <th mat-header-cell *matHeaderCellDef>Data de Nascimento</th>
+            <td mat-cell *matCellDef="let linha">{{ linha.dataNascimento}}</td>
+        </ng-container>
+        <ng-container matColumnDef="sexo">
+            <th mat-header-cell *matHeaderCellDef>Sexo</th>
+            <td mat-cell *matCellDef="let linha">{{ linha.sexo}}</td>
+        </ng-container>
+        <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let linha">
+                <a (click)="editar(linha)" class="edit">
+                    <i class="material-icons">
+                        edit
+                    </i>
+                </a>
+                <a (click)="excluir(linha)" class="delete">
+                    <i class="material-icons">
+                        delete
+                    </i>
+                </a>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+        <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+    </table>
+</div>

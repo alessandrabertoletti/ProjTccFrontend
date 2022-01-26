@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>Nova Vacina</mat-card-title>
+    <form #form="ngForm">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="vacina.nome" name="name" required nome>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Fabricante" [(ngModel)]="vacina.fabricante" name="fabricante" required fabricante>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Validade" [(ngModel)]="vacina.validade" name="validade" required validade>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="criarVacina()" color="primary" [disabled]="!form.valid">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancelar()">
+        Cancelar
+    </button>
+</mat-card>

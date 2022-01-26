@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-title>Novo </mat-card-title>
+    <form #form="ngForm">
+
+        <mat-form-field>
+            <input matInput placeholder="Lote da Dose" [(ngModel)]="vacinacao.lotedose" name="lotedose" required lotedose>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Data da Vacinação" [(ngModel)]="vacinacao.datavacinacao" name="datavacinacao" required datavacinacao>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Proxima Dose" [(ngModel)]="vacinacao.proximadose" name="proximadose" required proximadose>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="criarVacinacao()" color="primary"[disabled]="!form.valid">
+        Salvar
+    </button>
+    <button mat-raised-button (click)="cancelar()">
+        Cancelar
+    </button>
+</mat-card>
