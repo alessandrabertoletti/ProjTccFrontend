@@ -1,0 +1,7 @@
+Para rodar frontend use:
+
+npm start
+
+e no navegador coloque a rota:
+
+http://localhost:4200/
